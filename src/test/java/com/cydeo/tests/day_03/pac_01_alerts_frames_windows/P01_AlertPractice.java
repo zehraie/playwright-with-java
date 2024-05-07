@@ -38,14 +38,18 @@ public class P01_AlertPractice {
 
     @Test
     void test1() {
-        page.navigate("https://practice.cydeo.com/javascript_alerts");
-        page.locator("button").nth(0).click(); // or you can use first
-        // we need to use before wesay accept the dialog but stull playwrigt autodissmed yani automatically explicitly deal with it
+        //we need to use before in that example we have only one option then playwriht will handle with out this line
         page.onceDialog(d -> d.accept());
+
+        page.locator("button")
+                //.nth(0)
+                .first().click();
+
 
         String s = page.locator("#result").textContent();
 
-        System.out.println("s "+ s);
+
+        System.out.println("s = " + s);
 
     }
 
